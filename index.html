@@ -25,10 +25,9 @@
         radial-gradient(circle at 80% 60%, rgba(255,255,255,0.22), transparent 40%);
       background-size:100px 100px, 700px 700px, 900px 900px;
       color:#333;
-      font-family:"Arial Black", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      font-family:"Arial Black", system-ui, Arial, sans-serif;
       margin:0;
       padding:32px 16px;
-      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="22" font-size="22">💿</text></svg>') 8 8, auto;
     }
 
     .main-card{
@@ -39,139 +38,35 @@
       margin:0 auto;
       padding:24px;
       position:relative;
-      overflow:hidden;
-    }
-
-    .sparkles{
-      position:absolute; inset:-40px;
-      background:
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0 6px, transparent 6px 18px);
-      opacity:0.25;
-      transform:rotate(-2deg);
-      pointer-events:none;
-      mix-blend-mode:overlay;
-    }
-
-    header{
-      position:relative;
-      text-align:left;
-      border-bottom:4px solid var(--white);
-      margin-bottom:16px;
-      padding-bottom:10px;
     }
 
     h1{
-      color:var(--white);
-      font-size: clamp(2.4rem, 4vw, 4rem);
-      text-shadow: 3px 3px 0px var(--lavender);
+      color:#fff;
+      text-shadow:3px 3px 0 var(--lavender);
       margin:0;
-      text-transform:uppercase;
       font-style:italic;
-      letter-spacing:1px;
-    }
-
-    .sub-header{
-      color:var(--lavender);
-      font-size:1.2rem;
-      margin-top:6px;
-    }
-
-    .blink{
-      animation: blink 0.9s steps(2, jump-none) infinite;
-      background:var(--butter);
-      color:var(--ink);
-      padding:2px 6px;
-      border:2px dashed var(--lavender);
-      display:inline-block;
-      transform:rotate(-1deg);
-    }
-    @keyframes blink{ 50%{ opacity:0 } }
-
-    .marquee-bar{
-      background:var(--lavender);
-      color:var(--white);
-      padding:10px;
-      font-size:1.05rem;
-      margin: 14px -24px 18px -24px;
-      transform: rotate(-1deg);
-      border-top:3px solid rgba(255,255,255,0.6);
-      border-bottom:3px solid rgba(255,255,255,0.6);
-    }
-
-    .content-grid{
-      display:grid;
-      grid-template-columns: 1fr 2fr;
-      gap:16px;
-    }
-
-    .info-box{
-      background:var(--white);
-      border:3px solid var(--lavender);
-      padding:14px;
-      color:var(--deep-teal);
-      line-height:1.35;
-    }
-
-    .parental-advisory{
-      background:white;
-      color:black;
-      padding:6px 8px;
-      font-size:10px;
-      width:150px;
-      border:2px solid black;
-      margin-top:14px;
-      transform: rotate(2deg);
-    }
-
-    .now-playing{
-      background: rgba(255,255,255,0.55);
-      border:2px solid rgba(255,255,255,0.75);
-      padding:12px;
-      border-radius:14px;
-      margin-top:14px;
-    }
-
-    .tracklist{
-      background: rgba(255,255,255,0.5);
-      padding:14px;
-      border-radius:14px;
-      border:2px solid rgba(255,255,255,0.65);
-    }
-
-    .track{
-      background:var(--white);
-      margin-bottom:10px;
-      padding:12px;
-      border-left: 10px solid var(--lavender);
-    }
-
-    button{
-      background:var(--deep-teal);
-      color:white;
-      border:none;
-      padding:10px 16px;
-      font-family:"Arial Black", system-ui, Arial, sans-serif;
-      cursor:pointer;
-      box-shadow:4px 4px 0px var(--lavender);
-      margin-top:8px;
-    }
-
-    .gallery-wrap{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:4px solid rgba(255,255,255,0.8);
     }
 
     .polaroid-grid{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:12px;
+      margin-top:18px;
+    }
+
+    @media (max-width:980px){
+      .polaroid-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width:520px){
+      .polaroid-grid{grid-template-columns:1fr;}
     }
 
     .polaroid{
       background:#fff;
       padding:10px 10px 28px;
       box-shadow:10px 10px 0 rgba(155,130,188,.55);
+      transform:rotate(var(--rot,-2deg));
+      position:relative;
     }
 
     .polaroid img{
@@ -179,82 +74,89 @@
       height:200px;
       object-fit:cover;
       object-position:50% 10%;
+      display:block;
     }
 
-    .modal-backdrop{
-      position:fixed;
-      inset:0;
-      background:rgba(31,31,31,.55);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
+    .cap{
+      margin-top:8px;
+      font-family:"Comic Sans MS","Arial Black",sans-serif;
+      text-align:center;
+      font-size:.9rem;
     }
-
-    .modal-card{
-      background:#fff;
-      padding:20px;
-      max-width:600px;
-    }
-
-    .modal-hidden{display:none!important}
   </style>
 </head>
 
 <body>
 
 <div class="main-card">
-  <header>
-    <h1>TEAL 4 LIFE</h1>
-    <div class="sub-header">Official 90s Boy Band Shrine <span class="blink">NEW!</span></div>
-  </header>
+  <h1>TEAL 4 LIFE</h1>
+  <p>Official 90s Boy Band Shrine</p>
 
-  <div class="marquee-bar">
-    <marquee behavior="alternate" scrollamount="8">
-      *** TOUR BUS RUNS ON VIBES ONLY *** TEAL IS A LIFESTYLE ***
-    </marquee>
-  </div>
-
-  <div class="content-grid">
-    <div class="info-box">
-      <strong>THE BAND</strong><br/>
-      Because teal never dies. It just… moisturizes.
-      <div class="parental-advisory">PARENTAL ADVISORY<br/>EXCESSIVE CHEESE</div>
-    </div>
-
-    <div class="tracklist">
-      <div class="track"><strong>01. Chains & Gains</strong><br/><button>PLAY NOW</button></div>
-      <div class="track"><strong>02. 18 Holes but only one heart</strong><br/><button>PLAY NOW</button></div>
-      <div class="track"><strong>03. Summer '25</strong><br/><button>PLAY NOW</button></div>
-      <div class="track"><strong>04. The Takeover</strong><br/><button>PLAY NOW</button></div>
-    </div>
-  </div>
-
-  <div class="gallery-wrap">
-    <h2>Polaroid Gallery</h2>
-    <div class="polaroid-grid">
-      <img src="https://drive.google.com/thumbnail?id=1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE&sz=w1200">
-      <img src="https://drive.google.com/thumbnail?id=1R9DWazAdY-swkUzdT398cjFfqZfD7zco&sz=w1200">
-    </div>
-  </div>
-</div>
-
-<div class="modal-backdrop" id="originModal">
-  <div class="modal-card">
-    <h2>How TEAL 4 LIFE was born</h2>
-    <p>One night on a disc golf holiday… everyone wore teal.</p>
-    <button id="enterBtn">ENTER THE TEALVERSE</button>
-  </div>
+  <h2>📸 Polaroid Gallery</h2>
+  <div class="polaroid-grid" id="polaroidGrid"></div>
 </div>
 
 <script>
-(function () {
-  const modal = document.getElementById("originModal");
-  const hide = () => modal.classList.add("modal-hidden");
-  document.getElementById("enterBtn").onclick = hide;
-  modal.onclick = e => { if (e.target === modal) hide(); };
-  document.addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
-})();
+/*
+  This gallery loads ALL photos from /photos/
+  in alphabetical order. Filenames must match exactly.
+*/
+
+const PHOTO_FILES = [
+  "PXL_20251123_052628448.MP.jpg",
+  "PXL_20251123_052641968.MP.jpg",
+  "PXL_20251123_052645858.MP.jpg",
+  "PXL_20251123_052740336.jpg",
+  "PXL_20251123_052753855.jpg",
+  "PXL_20251123_052853187.jpg",
+  "PXL_20251123_052855459.jpg",
+  "PXL_20251123_052900032.MP.jpg",
+  "PXL_20251123_052901582.jpg",
+  "PXL_20251123_053051804.MP.jpg",
+  "PXL_20251123_053109561.jpg",
+  "PXL_20251123_053120652.MP.jpg",
+  "PXL_20251123_053122157.MP.jpg",
+  "PXL_20251123_053123129.jpg",
+  "PXL_20251123_053156874.jpg",
+  "PXL_20251123_053202957-EDIT.jpg",
+  "PXL_20251123_053202957.jpg",
+  "PXL_20251123_053226686.jpg",
+  "PXL_20251123_053231835.jpg",
+  "PXL_20251123_053237578.MP~2.jpg",
+  "PXL_20251123_053241135.MP.jpg",
+  "PXL_20251123_053432302.MP.jpg",
+  "PXL_20251123_053435679-EDIT-EDIT.jpg",
+  "PXL_20251123_053435679-EDIT.jpg",
+  "PXL_20251123_053435679.jpg",
+  "PXL_20251123_053536270.MP.jpg",
+  "PXL_20251123_053542118.MP.jpg",
+  "PXL_20251123_053549051.jpg",
+  "PXL_20251123_053558484.MP.jpg",
+  "PXL_20251123_053914966.jpg",
+  "PXL_20251123_053924912.jpg",
+  "PXL_20251123_053940701.jpg",
+  "PXL_20251123_053946320.jpg"
+];
+
+const grid = document.getElementById("polaroidGrid");
+
+PHOTO_FILES.forEach(name => {
+  const rot = (Math.random()*8-4).toFixed(1);
+  const caption = name.replace(/^PXL_|\.jpg|\.MP/gi,"").replace(/[_-]/g," ");
+
+  const div = document.createElement("div");
+  div.className = "polaroid";
+  div.style.setProperty("--rot", rot+"deg");
+
+  div.innerHTML = `
+    <a href="photos/${name}" target="_blank">
+      <img src="photos/${name}" loading="lazy" />
+    </a>
+    <div class="cap">${caption}</div>
+  `;
+
+  grid.appendChild(div);
+});
 </script>
 
 </body>
