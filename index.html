@@ -1,162 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>TEAL 4 LIFE — Official 90s Boy Band Shrine</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TEAL 4 LIFE — Official 90s Boy Band Shrine</title>
 
-  <style>
-    :root{
-      --mint-teal:#9ae2d1;
-      --soft-pink:#f2a2d4;
-      --lavender:#9b82bc;
-      --deep-teal:#149b9b;
-      --white:#ffffff;
-      --ink:#1f1f1f;
-      --butter:#fff6a6;
-    }
+<style>
+:root{
+  --mint-teal:#9ae2d1;
+  --soft-pink:#f2a2d4;
+  --lavender:#9b82bc;
+  --deep-teal:#149b9b;
+  --white:#ffffff;
+  --ink:#1f1f1f;
+  --butter:#fff6a6;
+}
 
-    *{box-sizing:border-box}
-    body{
-      background-color:var(--soft-pink);
-      background-image:
-        linear-gradient(45deg, var(--soft-pink) 25%, var(--lavender) 25%, var(--lavender) 50%, var(--soft-pink) 50%, var(--soft-pink) 75%, var(--lavender) 75%, var(--lavender) 100%),
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25), transparent 35%),
-        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.22), transparent 40%);
-      background-size:100px 100px, 700px 700px, 900px 900px;
-      color:#333;
-      font-family:"Arial Black", system-ui, Arial, sans-serif;
-      margin:0;
-      padding:32px 16px;
-    }
+*{box-sizing:border-box}
 
-    .main-card{
-      background:var(--mint-teal);
-      border:8px solid var(--white);
-      box-shadow: 15px 15px 0px var(--lavender);
-      max-width: 980px;
-      margin:0 auto;
-      padding:24px;
-      position:relative;
-    }
+body{
+  background-color:var(--soft-pink);
+  background-image:
+    linear-gradient(45deg, var(--soft-pink) 25%, var(--lavender) 25%, var(--lavender) 50%, var(--soft-pink) 50%, var(--soft-pink) 75%, var(--lavender) 75%, var(--lavender) 100%);
+  background-size:100px 100px;
+  font-family:"Arial Black", system-ui, Arial, sans-serif;
+  margin:0;
+  padding:32px 16px;
+}
 
-    h1{
-      color:#fff;
-      text-shadow:3px 3px 0 var(--lavender);
-      margin:0;
-      font-style:italic;
-    }
+.main-card{
+  background:var(--mint-teal);
+  border:8px solid var(--white);
+  box-shadow:15px 15px 0 var(--lavender);
+  max-width:860px;
+  margin:0 auto 24px auto;
+  padding:24px;
+}
 
-    .polaroid-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-top:18px;
-    }
+header{
+  border-bottom:4px solid var(--white);
+  padding-bottom:12px;
+}
 
-    @media (max-width:980px){
-      .polaroid-grid{grid-template-columns:repeat(2,1fr);}
-    }
-    @media (max-width:520px){
-      .polaroid-grid{grid-template-columns:1fr;}
-    }
+h1{
+  color:white;
+  text-shadow:3px 3px 0 var(--lavender);
+  margin:0;
+  font-style:italic;
+}
 
-    .polaroid{
-      background:#fff;
-      padding:10px 10px 28px;
-      box-shadow:10px 10px 0 rgba(155,130,188,.55);
-      transform:rotate(var(--rot,-2deg));
-      position:relative;
-    }
+.sub-header{
+  color:var(--lavender);
+  margin-top:6px;
+}
 
-    .polaroid img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      object-position:50% 10%;
-      display:block;
-    }
+.blink{
+  background:var(--butter);
+  padding:2px 6px;
+  border:2px dashed var(--lavender);
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink{50%{opacity:0}}
 
-    .cap{
-      margin-top:8px;
-      font-family:"Comic Sans MS","Arial Black",sans-serif;
-      text-align:center;
-      font-size:.9rem;
-    }
-  </style>
+.hero-banner{
+  margin:16px 0;
+  border:4px solid white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:10px 10px 0 var(--lavender);
+}
+
+.hero-banner img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.marquee-bar{
+  background:var(--lavender);
+  color:white;
+  padding:10px;
+  margin:16px -24px;
+}
+
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:16px;
+}
+
+.info-box{
+  background:white;
+  border:3px solid var(--lavender);
+  padding:14px;
+}
+
+.tracklist .track{
+  background:white;
+  padding:12px;
+  margin-bottom:10px;
+  border-left:10px solid var(--lavender);
+}
+
+button{
+  background:var(--deep-teal);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  font-family:"Arial Black", system-ui, Arial, sans-serif;
+  box-shadow:4px 4px 0 var(--lavender);
+  cursor:pointer;
+}
+
+.gallery-title{
+  color:white;
+  text-shadow:2px 2px 0 var(--lavender);
+  margin-bottom:10px;
+}
+
+.polaroid-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+@media(max-width:980px){
+  .content-grid{grid-template-columns:1fr}
+  .polaroid-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+  .polaroid-grid{grid-template-columns:1fr}
+}
+
+.polaroid{
+  background:white;
+  padding:10px 10px 28px;
+  box-shadow:10px 10px 0 rgba(155,130,188,.55);
+  transform:rotate(var(--rot,-2deg));
+}
+
+.polaroid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+
+.cap{
+  text-align:center;
+  margin-top:8px;
+  font-family:"Comic Sans MS","Arial Black",sans-serif;
+}
+</style>
 </head>
 
 <body>
 
 <div class="main-card">
-  <h1>TEAL 4 LIFE</h1>
-  <p>Official 90s Boy Band Shrine</p>
+  <header>
+    <h1>TEAL 4 LIFE</h1>
+    <div class="sub-header">Official 90s Boy Band Shrine <span class="blink">NEW!</span></div>
+  </header>
 
-  <h2>📸 Polaroid Gallery</h2>
+  <div class="hero-banner">
+    <img src="https://drive.google.com/thumbnail?id=1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE&sz=w2000" alt="">
+  </div>
+
+  <div class="marquee-bar">
+    <marquee behavior="alternate">*** TOUR BUS RUNS ON VIBES ONLY *** TEAL IS A LIFESTYLE ***</marquee>
+  </div>
+
+  <div class="content-grid">
+    <div class="info-box">
+      <strong>THE BAND</strong><br>
+      Because teal never dies. It just… moisturizes.
+    </div>
+
+    <div class="tracklist">
+      <div class="track"><strong>01. Chains & Gains</strong></div>
+      <div class="track"><strong>02. 18 Holes but only one heart</strong></div>
+      <div class="track"><strong>03. Summer '25</strong></div>
+      <div class="track"><strong>04. The Takeover</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="main-card">
+  <h2 class="gallery-title">📸 Polaroid Gallery</h2>
   <div class="polaroid-grid" id="polaroidGrid"></div>
 </div>
 
 <script>
-/*
-  This gallery loads ALL photos from /photos/
-  in alphabetical order. Filenames must match exactly.
-*/
-
-const PHOTO_FILES = [
-  "PXL_20251123_052628448.MP.jpg",
-  "PXL_20251123_052641968.MP.jpg",
-  "PXL_20251123_052645858.MP.jpg",
-  "PXL_20251123_052740336.jpg",
-  "PXL_20251123_052753855.jpg",
-  "PXL_20251123_052853187.jpg",
-  "PXL_20251123_052855459.jpg",
-  "PXL_20251123_052900032.MP.jpg",
-  "PXL_20251123_052901582.jpg",
-  "PXL_20251123_053051804.MP.jpg",
-  "PXL_20251123_053109561.jpg",
-  "PXL_20251123_053120652.MP.jpg",
-  "PXL_20251123_053122157.MP.jpg",
-  "PXL_20251123_053123129.jpg",
-  "PXL_20251123_053156874.jpg",
-  "PXL_20251123_053202957-EDIT.jpg",
-  "PXL_20251123_053202957.jpg",
-  "PXL_20251123_053226686.jpg",
-  "PXL_20251123_053231835.jpg",
-  "PXL_20251123_053237578.MP~2.jpg",
-  "PXL_20251123_053241135.MP.jpg",
-  "PXL_20251123_053432302.MP.jpg",
-  "PXL_20251123_053435679-EDIT-EDIT.jpg",
-  "PXL_20251123_053435679-EDIT.jpg",
-  "PXL_20251123_053435679.jpg",
-  "PXL_20251123_053536270.MP.jpg",
-  "PXL_20251123_053542118.MP.jpg",
-  "PXL_20251123_053549051.jpg",
-  "PXL_20251123_053558484.MP.jpg",
-  "PXL_20251123_053914966.jpg",
-  "PXL_20251123_053924912.jpg",
-  "PXL_20251123_053940701.jpg",
-  "PXL_20251123_053946320.jpg"
+const PHOTOS=[
+ {id:"1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE",cap:"Teal Destiny"},
+ {id:"1R9DWazAdY-swkUzdT398cjFfqZfD7zco",cap:"Synchronised Smoulder"},
+ {id:"1lR56oAIK0eg8pCzZx2hWZnlye6gwGAwX",cap:"Hydrated Harmony"}
 ];
 
-const grid = document.getElementById("polaroidGrid");
-
-PHOTO_FILES.forEach(name => {
-  const rot = (Math.random()*8-4).toFixed(1);
-  const caption = name.replace(/^PXL_|\.jpg|\.MP/gi,"").replace(/[_-]/g," ");
-
-  const div = document.createElement("div");
-  div.className = "polaroid";
-  div.style.setProperty("--rot", rot+"deg");
-
-  div.innerHTML = `
-    <a href="photos/${name}" target="_blank">
-      <img src="photos/${name}" loading="lazy" />
+const grid=document.getElementById("polaroidGrid");
+grid.innerHTML=PHOTOS.map(p=>`
+  <div class="polaroid" style="--rot:${(Math.random()*8-4).toFixed(1)}deg">
+    <a href="https://drive.google.com/file/d/${p.id}/view" target="_blank">
+      <img src="https://drive.google.com/thumbnail?id=${p.id}&sz=w1200">
     </a>
-    <div class="cap">${caption}</div>
-  `;
-
-  grid.appendChild(div);
-});
+    <div class="cap">${p.cap}</div>
+  </div>
+`).join("");
 </script>
 
 </body>
