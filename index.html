@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>TEAL 4 LIFE — Official 90s Boy Band Shrine</title>
 
 <style>
-/* ===== BASE THEME ===== */
 :root{
   --mint-teal:#9ae2d1;
   --soft-pink:#f2a2d4;
@@ -24,8 +23,6 @@ body{
     repeating-linear-gradient(45deg,#f2a2d4 0 40px,#9b82bc 40px 80px);
   font-family:"Arial Black",system-ui,Arial,sans-serif;
 }
-
-/* ===== MAIN CARD (COMPACT LOCK) ===== */
 .main-card{
   max-width:860px;
   margin:0 auto;
@@ -35,8 +32,6 @@ body{
   padding:24px;
   position:relative;
 }
-
-/* ===== HEADER ===== */
 h1{
   margin:0;
   color:#fff;
@@ -44,8 +39,6 @@ h1{
   font-style:italic;
 }
 .sub-header{color:var(--lavender);margin-top:6px}
-
-/* ===== HERO ===== */
 .hero-banner{
   margin:14px 0;
   border-radius:18px;
@@ -57,10 +50,7 @@ h1{
   height:280px;
   object-fit:cover;
   object-position:50% 10%;
-  display:block;
 }
-
-/* ===== TRACKS ===== */
 .content-grid{
   display:grid;
   grid-template-columns:1fr 2fr;
@@ -82,8 +72,6 @@ button{
   padding:10px 16px;
   cursor:pointer;
 }
-
-/* ===== MEMBERS ===== */
 .members-wrap{margin-top:24px}
 .members-grid{
   display:grid;
@@ -102,8 +90,6 @@ button{
   object-fit:cover;
   object-position:50% 10%;
 }
-
-/* ===== POLAROIDS ===== */
 .polaroid-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -122,7 +108,7 @@ button{
   object-position:50% 10%;
 }
 
-/* ===== MODAL ===== */
+/* MODAL */
 .modal-backdrop{
   position:fixed;
   inset:0;
@@ -148,7 +134,7 @@ button{
   <div class="sub-header">Official 90s Boy Band Shrine</div>
 
   <div class="hero-banner">
-    <img src="photos/1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE.jpg">
+    <img src="https://drive.google.com/thumbnail?id=1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE&sz=w2000">
   </div>
 
   <div class="content-grid">
@@ -167,23 +153,23 @@ button{
   <div class="members-wrap">
     <h2>Band Member Profiles</h2>
     <div class="members-grid">
-      <div><div class="member-photo"><img src="photos/1VJoX9C8zHazPi2XsIVGlY6nUh86cz5H5.jpg"></div>Sam Hornbrook</div>
-      <div><div class="member-photo"><img src="photos/1Qgw4gpAEAwDf_4MAQu8uRrHE5tqxT6dN.jpg"></div>Steve Gill</div>
-      <div><div class="member-photo"><img src="photos/1gk12cprwoqG5KRiAIzIcieBTkfRmEqcF.jpg"></div>Chris Nairn</div>
-      <div><div class="member-photo"><img src="photos/17EZE_mZ9RaNMde0Pcoxt7ph3DCStOro_.jpg"></div>Dave Caldwell</div>
+      <div><div class="member-photo"><img src="https://drive.google.com/thumbnail?id=1VJoX9C8zHazPi2XsIVGlY6nUh86cz5H5&sz=w1200"></div>Sam Hornbrook</div>
+      <div><div class="member-photo"><img src="https://drive.google.com/thumbnail?id=1Qgw4gpAEAwDf_4MAQu8uRrHE5tqxT6dN&sz=w1200"></div>Steve Gill</div>
+      <div><div class="member-photo"><img src="https://drive.google.com/thumbnail?id=1gk12cprwoqG5KRiAIzIcieBTkfRmEqcF&sz=w1200"></div>Chris Nairn</div>
+      <div><div class="member-photo"><img src="https://drive.google.com/thumbnail?id=17EZE_mZ9RaNMde0Pcoxt7ph3DCStOro_&sz=w1200"></div>Dave Caldwell</div>
     </div>
   </div>
 
   <div class="gallery-wrap">
     <h2>Polaroid Gallery</h2>
     <div class="polaroid-grid">
-      <a href="photos/1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE.jpg" target="_blank"><img src="photos/1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE.jpg"></a>
-      <a href="photos/1R9DWazAdY-swkUzdT398cjFfqZfD7zco.jpg" target="_blank"><img src="photos/1R9DWazAdY-swkUzdT398cjFfqZfD7zco.jpg"></a>
+      <img src="https://drive.google.com/thumbnail?id=1nADiKjpjmgcDXi1wI8LHnyK7IZtGFOAE&sz=w1200">
+      <img src="https://drive.google.com/thumbnail?id=1R9DWazAdY-swkUzdT398cjFfqZfD7zco&sz=w1200">
     </div>
   </div>
 </div>
 
-<!-- ===== ORIGIN MODAL ===== -->
+<!-- ORIGIN MODAL -->
 <div class="modal-backdrop" id="originModal">
   <div class="modal-card">
     <h2>How TEAL 4 LIFE was born</h2>
@@ -193,12 +179,12 @@ button{
 </div>
 
 <script>
-(() => {
-  const modal=document.getElementById("originModal");
-  const hide=()=>modal.classList.add("modal-hidden");
-  document.getElementById("enterBtn").onclick=hide;
-  modal.onclick=e=>{if(e.target===modal)hide()};
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
+(function () {
+  const modal = document.getElementById("originModal");
+  const hide = () => modal.classList.add("modal-hidden");
+  document.getElementById("enterBtn").onclick = hide;
+  modal.onclick = e => { if (e.target === modal) hide(); };
+  document.addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
 })();
 </script>
 
